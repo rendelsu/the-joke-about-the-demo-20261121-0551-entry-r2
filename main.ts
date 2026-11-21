@@ -1,7 +1,7 @@
 // main.ts — writes one one-line joke to /output/entry.txt.
 // Node 22, standard library only. Reads the joke from joke.txt next to
-// this file and copies it verbatim (no trailing newline added or removed
-// beyond what the file holds) to MAKEFUN_OUTPUT_DIR || /output.
+// this file, normalises line endings and drops one trailing newline,
+// then writes the single clean line to MAKEFUN_OUTPUT_DIR || /output.
 
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
